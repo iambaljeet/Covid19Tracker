@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#535AF6</color>
+    <color name="colorPrimaryDark">#535AF6</color>
+    <color name="colorAccent">#535AF6</color>
+
+    <color name="colorHomeToolbar">#535AF6</color>
+    <color name="colorHomeToolbarTexts">#FFFFFF</color>
+
+    <color name="colorConfirmed">#FFEB3B</color>
+    <color name="colorRecovered">#4CAF50</color>
+    <color name="colorDeaths">#FD2C2C</color>
+    <color name="colorTransparent">#00171B1E</color>
 </resources>

@@ -13,6 +13,15 @@ buildscript {
     ext.espresso_core = "3.2.0"
     ext.glide_version = "4.11.0"
     ext.okhttp_logging_version = "4.3.1"
+    ext.recycler_view_version = "1.2.0-alpha02"
+    ext.material_design_version = "1.2.0-alpha06"
+    ext.mp_charts_version = "v3.1.0"
+    ext.lifecycle_extensions_version = "2.2.0"
+    ext.preference_ktx_version = "1.1.1"
+    ext.room_version = "2.2.5"
+    ext.work_version = "2.3.4"
+    ext.support_version = "1.0.0"
+    ext.nav_version = "2.3.0-alpha05"
 
     repositories {
         google()
@@ -29,6 +38,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
 }
 

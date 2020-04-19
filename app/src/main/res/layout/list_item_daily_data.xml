@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_confirmed_cases_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="Confirmed"
+            android:textColor="@color/colorConfirmed"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/text_view_recovered_cases_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_country_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_recovered_cases_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="Recovered"
+            android:textColor="@color/colorRecovered"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/text_view_deceased_cases_title"
+            app:layout_constraintStart_toEndOf="@+id/text_view_confirmed_cases_title"
+            app:layout_constraintTop_toTopOf="@+id/text_view_confirmed_cases_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_deceased_cases_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="Deceased"
+            android:textColor="@color/colorDeaths"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_recovered_cases_title"
+            app:layout_constraintTop_toTopOf="@+id/text_view_confirmed_cases_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_confirmed_cases"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/text_view_last_updated"
+            app:layout_constraintEnd_toEndOf="@+id/text_view_confirmed_cases_title"
+            app:layout_constraintStart_toStartOf="@+id/text_view_confirmed_cases_title"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_confirmed_cases_title"
+            tools:text="200" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_recovered_cases"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/text_view_last_updated"
+            app:layout_constraintEnd_toEndOf="@+id/text_view_recovered_cases_title"
+            app:layout_constraintStart_toStartOf="@+id/text_view_recovered_cases_title"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_recovered_cases_title"
+            tools:text="200" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_deceased_cases"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/text_view_date"
+            app:layout_constraintEnd_toEndOf="@+id/text_view_deceased_cases_title"
+            app:layout_constraintStart_toStartOf="@+id/text_view_deceased_cases_title"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_deceased_cases_title"
+            tools:text="200" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Last updated: 12:00 PM" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
