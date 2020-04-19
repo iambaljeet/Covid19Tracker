@@ -12,15 +12,14 @@
 
 **Covid19Tracker** is an Android applciation 📱 used to track Covid 19 data. 
 
-***You can Install and test latest Foodium app from below 👇***
+***You can Install and test latest app from below 👇***
 
-[![Foodium App](https://img.shields.io/badge/Foodium🍲-APK-red.svg?style=for-the-badge&logo=android)](https://github.com/iambaljeet/Covid19Tracker/blob/master/apk/Covid19Tracker.apk)
-
+- [APK](https://github.com/iambaljeet/Covid19Tracker/blob/master/apk/Covid19Tracker.apk)
 
 ## About
 . This application first conenct to API to get Data. It saves the data to Local DB and fetched it ans shows to UI everytime App is opened.
 Also it synchronize the Data with Remote server.
-- This makes it offline capable 😃. 
+- This makes it offline capable. 
 - Clean and Simple Material UI.
 - It supports dark theme too 🌗.
 
@@ -85,7 +84,5 @@ If you need any help, you can connect with me.
 Visit:- [baljeet.dev](https://baljeet.dev)
 
 ## License
-```
-GNU License Visit:- [LICENSE](https://github.com/iambaljeet/Covid19Tracker/blob/master/LICENSE)
 
-```
+GNU License Visit:- [LICENSE](https://github.com/iambaljeet/Covid19Tracker/blob/master/LICENSE)
