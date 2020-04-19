@@ -1,4 +1,4 @@
-package com.app.covid19tracker.networking
+package com.app.covid19tracker.repository
 
 import androidx.annotation.MainThread
 import androidx.annotation.WorkerThread

@@ -6,7 +6,6 @@ import com.app.covid19tracker.model.DailyDataModel
 import com.app.covid19tracker.model.DataResult
 import com.app.covid19tracker.model.GlobalDataModel
 import com.app.covid19tracker.networking.ApiService
-import com.app.covid19tracker.networking.NetworkOnlineOfflineDataRepo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow

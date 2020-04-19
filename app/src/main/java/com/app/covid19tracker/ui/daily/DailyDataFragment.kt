@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -13,6 +14,7 @@ import com.app.covid19tracker.adapter.DailyUpdatesAdapter
 import com.app.covid19tracker.model.DataResult
 import com.google.android.material.transition.MaterialSharedAxis
 import kotlinx.android.synthetic.main.fragment_daily_data.*
+import kotlinx.android.synthetic.main.layout_loading.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -56,10 +58,12 @@ class DailyDataFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         dailyDataViewModel.getDailyData().observe(viewLifecycleOwner, Observer {
             when (it) {
                 is DataResult.Loading -> {
+                    showLoading()
                 }
                 is DataResult.Success -> {
                     val dataList = it.data
                     dailyUpdatesAdapter.submitList(dataList?.asReversed())
+                    showData()
                 }
                 is DataResult.Failure -> {
                 }
@@ -69,5 +73,15 @@ class DailyDataFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     override fun onRefresh() {
         getData()
+    }
+
+    fun showLoading() {
+        loading_view.isVisible = true
+        container_data_layout.isVisible = false
+    }
+
+    fun showData() {
+        loading_view.isVisible = false
+        container_data_layout.isVisible = true
     }
 }

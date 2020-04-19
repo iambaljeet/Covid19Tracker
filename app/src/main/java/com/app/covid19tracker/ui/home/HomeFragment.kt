@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.MergeAdapter
@@ -17,6 +18,7 @@ import com.app.covid19tracker.model.GlobalDataModel
 import com.app.covid19tracker.utility.getFormattedDate
 import com.google.android.material.transition.MaterialSharedAxis
 import kotlinx.android.synthetic.main.home_fragment.*
+import kotlinx.android.synthetic.main.layout_loading.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -72,10 +74,12 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
             swipe_refresh_data_layout.isRefreshing = false
             when (it) {
                 is DataResult.Loading -> {
+                    showLoading()
                 }
                 is DataResult.Success -> {
                     val allDataModel = it.data
                     setMyCountryData(allDataModel)
+                    showData()
                 }
                 is DataResult.Failure -> {
                 }
@@ -88,10 +92,12 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
             swipe_refresh_data_layout.isRefreshing = false
             when (it) {
                 is DataResult.Loading -> {
+                    showLoading()
                 }
                 is DataResult.Success -> {
                     val allDataModel = it.data
                     setData(allDataModel)
+                    showData()
                 }
                 is DataResult.Failure -> {
                 }
@@ -119,5 +125,15 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     override fun onRefresh() {
         getData()
+    }
+
+    fun showLoading() {
+        loading_view.isVisible = true
+        container_data_layout.isVisible = false
+    }
+
+    fun showData() {
+        loading_view.isVisible = false
+        container_data_layout.isVisible = true
     }
 }
