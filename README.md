@@ -8,7 +8,7 @@
 ![GitHub forks](https://img.shields.io/github/forks/iambaljeet/Covid19Tracker)
 ![GitHub watchers](https://img.shields.io/github/watchers/iambaljeet/Covid19Tracker?style=social)
 ![Tweet](	https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fiambaljeet%2FCovid19Tracker)
-![Twitter Follow](https://img.shields.io/twitter/follow/baljeet_dev?label=Follow&style=social)
+![Twitter Follow](https://img.shields.io/twitter/follow/yetanotherdev_?label=Follow&style=social)
 
 **Covid19Tracker** is an Android applciation 📱 used to track Covid 19 data. 
 
