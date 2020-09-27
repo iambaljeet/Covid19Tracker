@@ -10,16 +10,16 @@
 ![Tweet](	https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fiambaljeet%2FCovid19Tracker)
 ![Twitter Follow](https://img.shields.io/twitter/follow/yetanotherdev_?label=Follow&style=social)
 
-**Covid19Tracker** is an Android applciation 📱 used to track Covid 19 data. 
+**Covid19Tracker** is an Android application 📱 used to track Covid-19 data. 
 
 ***You can Install and test latest app from below 👇***
 
 - [APK](https://github.com/iambaljeet/Covid19Tracker/blob/master/apk/Covid19Tracker.apk)
 
 ## About
-. This application first conenct to API to get Data. It saves the data to Local DB and fetched it ans shows to UI everytime App is opened.
+. This application first connect to API to get Data. than save it to Local DB to populate it to the UI.
 Also it synchronize the Data with Remote server.
-- This makes it offline capable. 
+- Offline compatible. 
 - Clean and Simple Material UI.
 - It supports dark theme too 🌗.
 
@@ -73,10 +73,6 @@ Also it synchronize the Data with Remote server.
 This app uses [***MVVM (Model View View-Model)***](https://developer.android.com/jetpack/docs/guide#recommended-app-arch) architecture.
 
 ![](https://developer.android.com/topic/libraries/architecture/images/final-architecture.png)
-
-## Contribute
-If you want to contribute to this library, you're always welcome!
-See [Contributing Guidelines](CONTRIBUTING.md). 
 
 ## Contact
 If you need any help, you can connect with me.
