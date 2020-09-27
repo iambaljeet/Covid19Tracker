@@ -27,10 +27,10 @@ class DailyDataFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val forward = MaterialSharedAxis.create(MaterialSharedAxis.X, true)
+        val forward = MaterialSharedAxis(MaterialSharedAxis.X, true)
         enterTransition = forward
 
-        val backward = MaterialSharedAxis.create(MaterialSharedAxis.X, false)
+        val backward = MaterialSharedAxis(MaterialSharedAxis.X, false)
         returnTransition = backward
     }
 

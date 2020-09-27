@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.MergeAdapter
+import androidx.recyclerview.widget.ConcatAdapter
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.app.covid19tracker.R
 import com.app.covid19tracker.adapter.CountryUpdatesAdapter
@@ -34,10 +34,10 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val backward = MaterialSharedAxis.create(MaterialSharedAxis.X, false)
+        val backward = MaterialSharedAxis(MaterialSharedAxis.X, false)
         reenterTransition = backward
 
-        val forward = MaterialSharedAxis.create(MaterialSharedAxis.X, true)
+        val forward = MaterialSharedAxis(MaterialSharedAxis.X, true)
         exitTransition = forward
     }
 
@@ -55,7 +55,7 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 //            theme_switch.toggleBasedOnTheme(appTheme)
 //        }
 
-        val mergeAdapter = MergeAdapter(totalUpdatesAdapter, countryUpdatesAdapter)
+        val mergeAdapter = ConcatAdapter(totalUpdatesAdapter, countryUpdatesAdapter)
         home_data_recycler_view.adapter = mergeAdapter
 
         swipe_refresh_data_layout.setOnRefreshListener(this)
