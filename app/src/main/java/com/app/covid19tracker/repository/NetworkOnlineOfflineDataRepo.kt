@@ -15,10 +15,16 @@ abstract class NetworkOnlineOfflineDataRepo<RESULT, REQUEST> {
         val localData = fetchDataFromLocalDb().first()
         emit(DataResult.Success(localData))
 
-        val apiResponse = fetchDataFromRemoteSource()
-        val data = apiResponse.body()
+        var apiResponse: Response<REQUEST>? = null
+        var data: REQUEST? = null
+        try {
+            apiResponse = fetchDataFromRemoteSource()
+            data = apiResponse.body()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
 
-        if (apiResponse.isSuccessful && data != null) {
+        if (apiResponse != null && apiResponse.isSuccessful && data != null) {
             saveDataFromRemoteSourceToLocalDb(data)
         } else {
             emit(DataResult.Failure("Something went wrong!"))

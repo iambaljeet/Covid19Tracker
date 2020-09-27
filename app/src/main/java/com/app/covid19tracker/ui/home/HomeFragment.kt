@@ -50,10 +50,6 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        val appTheme = context?.getApplicationTheme()
-//        if (appTheme != null) {
-//            theme_switch.toggleBasedOnTheme(appTheme)
-//        }
 
         val mergeAdapter = ConcatAdapter(totalUpdatesAdapter, countryUpdatesAdapter)
         home_data_recycler_view.adapter = mergeAdapter
@@ -63,14 +59,16 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         getData()
     }
 
+    @ExperimentalCoroutinesApi
     private fun getData() {
         getGlobalData()
         getMyCountryData()
     }
 
+    @ExperimentalCoroutinesApi
     private fun getMyCountryData() {
         val myCountryIso = Locale.getDefault().isO3Country
-        homeViewModel.getCountryWiseData(myCountryIso).observe(viewLifecycleOwner, Observer {
+        homeViewModel.getCountryWiseData(myCountryIso).observe(viewLifecycleOwner, {
             swipe_refresh_data_layout.isRefreshing = false
             when (it) {
                 is DataResult.Loading -> {
@@ -87,8 +85,9 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         })
     }
 
+    @ExperimentalCoroutinesApi
     private fun getGlobalData() {
-        homeViewModel.getRawData().observe(viewLifecycleOwner, Observer {
+        homeViewModel.getRawData().observe(viewLifecycleOwner, {
             swipe_refresh_data_layout.isRefreshing = false
             when (it) {
                 is DataResult.Loading -> {
@@ -123,16 +122,17 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         totalUpdatesAdapter.submitList(listOf(globalDataModel))
     }
 
+    @ExperimentalCoroutinesApi
     override fun onRefresh() {
         getData()
     }
 
-    fun showLoading() {
+    private fun showLoading() {
         loading_view.isVisible = true
         container_data_layout.isVisible = false
     }
 
-    fun showData() {
+    private fun showData() {
         loading_view.isVisible = false
         container_data_layout.isVisible = true
     }

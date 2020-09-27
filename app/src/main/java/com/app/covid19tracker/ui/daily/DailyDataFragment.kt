@@ -53,9 +53,10 @@ class DailyDataFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         getData()
     }
 
+    @ExperimentalCoroutinesApi
     private fun getData() {
         swipe_refresh_data_layout.isRefreshing = false
-        dailyDataViewModel.getDailyData().observe(viewLifecycleOwner, Observer {
+        dailyDataViewModel.getDailyData().observe(viewLifecycleOwner, {
             when (it) {
                 is DataResult.Loading -> {
                     showLoading()
@@ -71,16 +72,17 @@ class DailyDataFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         })
     }
 
+    @ExperimentalCoroutinesApi
     override fun onRefresh() {
         getData()
     }
 
-    fun showLoading() {
+    private fun showLoading() {
         loading_view.isVisible = true
         container_data_layout.isVisible = false
     }
 
-    fun showData() {
+    private fun showData() {
         loading_view.isVisible = false
         container_data_layout.isVisible = true
     }
